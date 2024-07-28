@@ -38,8 +38,11 @@ Hibernate dirty checking is a mechanism that automatically detects changes made 
 How it works:
 
 Entity loading: Hibernate creates a copy of the entity's state when it's loaded into the session.
+
 Property modification: Any changes made to the entity's properties are tracked.
+
 Flush operation: When the session is flushed or committed, Hibernate compares the current state with the original snapshot.
+
 Update generation: If differences are found, Hibernate generates an SQL UPDATE statement.
 
 
