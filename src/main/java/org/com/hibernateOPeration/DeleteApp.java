@@ -17,9 +17,12 @@ public class DeleteApp {
 
             session.beginTransaction();
             //Song Delete Operation
+
             Song song = session.get(Song.class, 4);
+            //An object is in the removed state when it has been marked for deletion from the database.
             session.delete(song);
             session.getTransaction().commit();
+
             session.close();
 
         }

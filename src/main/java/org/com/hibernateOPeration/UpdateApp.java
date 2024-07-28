@@ -16,9 +16,9 @@ public class UpdateApp {
             Transaction transaction = session.beginTransaction();
             // Song update operation
             Song song = session.get(Song.class, 1);
-            song.setSongName("KAL HO NA Ho -UPDATED1");
+            song.setSongName("KAL HO NA Ho -UPDATED2");
 
-            session.update(song);
+            //session.update(song);
 
             transaction.commit();
             session.close();
