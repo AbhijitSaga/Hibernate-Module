@@ -17,18 +17,29 @@
 Ans- (a)In Hibernate, an object can exist in three states: transient, persistent, and detached. These states define the relationship between the object and the database.
       * Transient State
         Definition: An object is in the transient state when it has been instantiated using the new operator but is not yet associated with a Hibernate session and has no representation in the database.
-           Example: Employee emp = new Employee();
+           Example: Song songObj = new Song();
 
      * Persistent State
       Definition: An object is in the persistent state when it is associated with a Hibernate session and its state is synchronized with the database.
                   Changes to the object are tracked and will be saved to the database when the session is commit or flushed.
-       Example: session.save(emp); or session.persist(emp);
+       Example: session.save(songObj); or session.persist(songObj);
     
    * Detached State:
      Definition: An object is in the detached state when it was once associated with a Hibernate session but is no longer associated with any session. Hibernate does not track changes to the object.
-     Example: After session.evict(emp); or after the session is closed.
+     Example: After session.evict(songObj); or after the session is closed.
 
 
 Transient State ------save(), persist(),  saveOrUpdate()---->    Persistent Stat ----- evict(), close() session------->  Detached State 
+
+
+4. Hibernate Dirty Checking
+Hibernate dirty checking is a mechanism that automatically detects changes made to persistent entities(SongObj) within a session. When an entity is loaded, Hibernate creates a snapshot of its initial state. If any property of the entity is modified, Hibernate marks it as "dirty".
+
+How it works:
+
+Entity loading: Hibernate creates a copy of the entity's state when it's loaded into the session.
+Property modification: Any changes made to the entity's properties are tracked.
+Flush operation: When the session is flushed or committed, Hibernate compares the current state with the original snapshot.
+Update generation: If differences are found, Hibernate generates an SQL UPDATE statement.
 
 
