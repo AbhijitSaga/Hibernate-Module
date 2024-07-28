@@ -32,7 +32,7 @@ Ans- (a)In Hibernate, an object can exist in three states: transient, persistent
 Transient State ------save(), persist(),  saveOrUpdate()---->    Persistent Stat ----- evict(), close() session------->  Detached State 
 
 
-4. Hibernate Dirty Checking
+4. Hibernate Dirty Checking: 
 Hibernate dirty checking is a mechanism that automatically detects changes made to persistent entities(SongObj) within a session. When an entity is loaded, Hibernate creates a snapshot of its initial state. If any property of the entity is modified, Hibernate marks it as "dirty".
 
 How it works:
