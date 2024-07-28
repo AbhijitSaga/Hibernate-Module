@@ -26,10 +26,13 @@ public class CreateApp
               session.beginTransaction();
 
               //Song object operation to save database
-
+               //song object is in transient state
               Song song = new Song("sarki je sar se dhire dhire", "kumar sanu");
+              // song object is now in persistent state
               session.save(song);
               session.getTransaction().commit();
+              // song object is now in detached state
+              session.close();
           }
 
 
