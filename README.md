@@ -10,7 +10,7 @@ Ans- (a)In Hibernate, an object can exist in three states: transient, persistent
        Example: session.save(emp); or session.persist(emp);
     
    * Detached State:
-     Definition: An object is in the detached state when it was once associated with a Hibernate session but is no longer associated with any session. Changes to the object are not tracked by Hibernate.
+     Definition: An object is in the detached state when it was once associated with a Hibernate session but is no longer associated with any session. Hibernate does not track changes to the object.
      Example: After session.evict(emp); or after the session is closed.
 
    +-------------------+                      
@@ -28,7 +28,7 @@ Ans- (a)In Hibernate, an object can exist in three states: transient, persistent
             |
             | delete()
             |
-            V
+		  
    +-------------------+
    |  Removed State    |
    |                   |
