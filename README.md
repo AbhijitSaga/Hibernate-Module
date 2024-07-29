@@ -37,11 +37,11 @@ Hibernate dirty checking is a mechanism that automatically detects changes made 
 
 How it works:
 
-Entity loading: Hibernate creates a copy of the Song object when it's loaded into the session.
+Entity loading: Hibernate creates a copy(snapshot song object) of the Song object when it's loaded into the session.
 
-Property modification: Any changes made to the Song object's properties are tracked.
+Property modification: Any changes made to the snapshot song object's properties are tracked by Hibernate.
 
-Flush operation: When the session is flushed or committed, Hibernate compares the current state with the original snapshot.
+Flush operation: When the session is flushed or committed, Hibernate compares the current state( persistent state object) with the  snapshot Object.
 
 Update generation: If differences are found, Hibernate generates an SQL UPDATE statement.
 
