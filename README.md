@@ -33,13 +33,13 @@ Transient State ------save(), persist(),  saveOrUpdate()---->    Persistent Stat
 
 
 4. Hibernate Dirty Checking: 
-Hibernate dirty checking is a mechanism that automatically detects changes made to persistent entities(SongObj) within a session. When an entity is loaded, Hibernate creates a snapshot of its initial state. If any property of the entity is modified, Hibernate marks it as "dirty".
+Hibernate dirty checking is a mechanism that automatically detects changes made to persistent state(SongObj in side session) . When an entity is loaded, Hibernate creates a snapshot of persistent state object. If any property of the snapshot object is modified, Hibernate marks it as "dirty".
 
 How it works:
 
-Entity loading: Hibernate creates a copy of the entity's state when it's loaded into the session.
+Entity loading: Hibernate creates a copy of the Song object when it's loaded into the session.
 
-Property modification: Any changes made to the entity's properties are tracked.
+Property modification: Any changes made to the Song object's properties are tracked.
 
 Flush operation: When the session is flushed or committed, Hibernate compares the current state with the original snapshot.
 
